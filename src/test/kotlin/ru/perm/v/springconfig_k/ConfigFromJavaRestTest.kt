@@ -23,13 +23,20 @@ class ConfigFromJavaRestTest {
         val result =
             restTemplate.getForObject("http://127.0.0.1:$port/api/simple_conf_k/bean_one", String::class.java)
 
-        assertEquals("beanOne1", result)
+        assertEquals("BEAN_ONE", result)
     }
     @Test
     fun getBeanTwo() {
         val result =
             restTemplate.getForObject("http://127.0.0.1:$port/api/simple_conf_k/bean_two", String::class.java)
 
-        assertEquals("beanTwo2", result)
+        assertEquals("BEAN_TWO", result)
+    }
+    @Test
+    fun getStaticBean() {
+        val result =
+            restTemplate.getForObject("http://127.0.0.1:$port/api/simple_conf_k/static_bean", String::class.java)
+
+        assertEquals("STATIC_BEAN", result)
     }
 }
