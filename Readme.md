@@ -9,3 +9,12 @@
 ### 1. С помощью xml-файла.
 
 Определение beans в [resources/beans.xml](https://github.com/cherepakhin/spring_config_k/blob/main/src/main/resources/beans.xml):
+
+### Примечания.
+
+Используется Java 11:
+
+````shell
+~/prog/kotlin/spring_config_k$ export JAVA_HOME=/usr/lib/jvm/java-1.11.0-openjdk-amd64
+~/prog/kotlin/spring_config_k$ ./gradlew clean test
+````
