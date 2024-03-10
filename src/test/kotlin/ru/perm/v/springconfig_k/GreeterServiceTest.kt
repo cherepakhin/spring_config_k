@@ -9,22 +9,29 @@ import ru.perm.v.springconfig_k.service.GreeterService
 class GreeterServiceTest {
     @Test
     fun defultInit() {
+        System.setProperty("user.name", "testuser")
         val service = GreeterService()
 
-        assertEquals("Hello, vasi", service.getHelloFromGreeter())
+        assertEquals("Hello, testuser", service.getHelloFromGreeter())
     }
 
     @Test
     fun setGermanyGreeter() {
+        System.setProperty("user.name", "testuser")
+
         val service = GreeterService()
         service.greeter = GermanyGreeter()
-        assertEquals("Guten Tag, vasi", service.getHelloFromGreeter())
+
+        assertEquals("Guten Tag, testuser", service.getHelloFromGreeter())
     }
     @Test
     fun setRussianGreeter() {
+        System.setProperty("user.name", "testuser")
+
         val service = GreeterService()
         service.greeter = RussianGreeter()
-        assertEquals("Привет, vasi", service.getHelloFromGreeter())
+
+        assertEquals("Привет, testuser", service.getHelloFromGreeter())
     }
 
 }
