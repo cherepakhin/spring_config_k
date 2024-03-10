@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test
 class EnglishGreeterTest {
     @Test
     fun sayHello() {
-        assertEquals("Hello, vasi", EnglishGreeter().sayHello())
+        System.setProperty("user.name", "testuser")
+
+        assertEquals("Hello, testuser", EnglishGreeter().sayHello())
     }
 }

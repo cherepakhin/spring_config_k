@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test
 class GermanyGreeterTest {
     @Test
     fun sayHello() {
-        assertEquals("Guten Tag, vasi", GermanyGreeter().sayHello())
+        System.setProperty("user.name", "testuser")
+
+        assertEquals("Guten Tag, testuser", GermanyGreeter().sayHello())
     }
 }
