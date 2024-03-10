@@ -4,6 +4,7 @@
 Аналогичный проект на java [https://github.com/cherepakhin/spring_config](https://github.com/cherepakhin/spring_config)
 
 1. [С помощью xml-файла resources/beans.xml](#xml_file)
+2. [С помощью @Configuration и @Bean в conf/ConfigFromJava](#configuration)
 
 <a id="xml_file"></a>
 ### 1. С помощью xml-файла.
@@ -22,6 +23,9 @@
 ````
 
 Для импортирования бинов, определенных в beans.xml, нужно создать класс [conf/BeansConfiguration.java](https://github.com/cherepakhin/spring_config/blob/main/src/main/java/ru/perm/v/springconfig/conf/BeansConfiguration.java):
+
+<a id="configuration"></a>
+### 2. С помощью @Configuration и @Bean в [conf/ConfigFromJava.java](https://github.com/cherepakhin/spring_config/blob/main/src/main/java/ru/perm/v/springconfig/conf/ConfigFromJava.java).
 
 ### Примечания.
 

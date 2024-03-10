@@ -11,15 +11,18 @@ import org.springframework.test.context.junit.jupiter.SpringExtension
 
 @ExtendWith(SpringExtension::class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class HelloRestTest(
-    @LocalServerPort var port: Int,
-    @Autowired var restTemplate: TestRestTemplate
-) {
-    @Test
-    fun getHello() {
-        val result = restTemplate
-            .getForObject("http://127.0.0.1:$port/api/hello/", String::class.java)
-        assertEquals("hello", result)
-    }
+class ConfigFromJavaRestTest {
+    @LocalServerPort
+    val port = 8780
 
+    @Autowired
+    lateinit var restTemplate: TestRestTemplate
+
+    @Test
+    fun getBeanOne() {
+        val result =
+            restTemplate.getForObject("http://127.0.0.1:$port/api/simple_conf_k/bean_one", String::class.java)
+
+        assertEquals("beanOne1", result)
+    }
 }
