@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController
 
 /**
  * Different ways injection beans
+ * All beans defined in ru.perm.v.springconfig_k.conf.ConfigFromCode.kt
  */
 @RestController
 @RequestMapping("/simple_conf_k")
