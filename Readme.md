@@ -10,6 +10,19 @@
 
 Определение beans в [resources/beans.xml](https://github.com/cherepakhin/spring_config_k/blob/main/src/main/resources/beans.xml):
 
+````xml
+
+<bean id="russianGreeter" class="ru.perm.v.springconfig_k.greeters.RussianGreeter"/>
+<bean id="germanyGreeter" class="ru.perm.v.springconfig_k.greeters.GermanyGreeter"/>
+<bean id="englishGreeter" class="ru.perm.v.springconfig_k.greeters.EnglishGreeter"/>
+
+<bean id="selectedGreeterService" class="ru.perm.v.springconfig.service.GreeterService">
+<property name="greeter" ref="russianGreeter"/>
+</bean>
+````
+
+Для импортирования бинов, определенных в beans.xml, нужно создать класс [conf/BeansConfiguration.java](https://github.com/cherepakhin/spring_config/blob/main/src/main/java/ru/perm/v/springconfig/conf/BeansConfiguration.java):
+
 ### Примечания.
 
 Используется Java 11:
