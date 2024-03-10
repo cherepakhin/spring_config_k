@@ -1,4 +1,4 @@
-package ru.perm.v.spring_config_k
+package ru.perm.v.springconfig_k
 
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.junit.jupiter.api.Assertions.assertTrue

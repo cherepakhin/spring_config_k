@@ -36,3 +36,4 @@ build/
 behave/reports/
 
 log/
+.gradle/

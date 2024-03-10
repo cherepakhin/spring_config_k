@@ -1,3 +1,17 @@
 server:
+  port: ${API_PORT:8780}
   servlet:
-    context-path: /api
+    context-path: "/api"
+  # For include message error to http response!!!
+  error:
+    include-message: always
+
+spring:
+  application:
+    name: spring_config_k
+
+logging:
+  level:
+    root: info
+  file:
+    path: log/

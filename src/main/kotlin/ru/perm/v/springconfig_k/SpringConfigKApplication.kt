@@ -1,4 +1,4 @@
-package ru.perm.v.spring_config_k
+package ru.perm.v.springconfig_k
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
