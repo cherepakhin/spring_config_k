@@ -1,11 +1,13 @@
 Различные способы задания конфигурации Spring Beans с Kotlin
 ----------------
 
+Для чего этот проект? Для подготовки опытов с проектом с [Camel](https://github.com/cherepakhin/camel_rest).
+
 Аналогичный проект на java [https://github.com/cherepakhin/spring_config](https://github.com/cherepakhin/spring_config)
 
 1. [Установки для Java 11](#set_java_version)
-2. [С помощью xml-файла resources/beans.xml](#xml_file)
-3. [С помощью @Configuration и @Bean в conf/ConfigFromJava](#configuration)
+2. [Настройки Spring beans с помощью xml-файла resources/beans.xml](#xml_file)
+3. [Настройки Spring beans с помощью @Configuration и @Bean в conf/ConfigFromJava](#configuration)
 
 <a id="set_java_version"></a>
 ### 1. Установки для Java 11.
