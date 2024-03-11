@@ -24,7 +24,8 @@ class ConfigFromCodeRest {
     @Qualifier("beanTwoConfigFromCode")
     lateinit var myVarBeanTwoConfigFromCode: String
 
-    // name "staticBean" defined in ConfigFromCode class as @Bean("staticBean")
+    // bean with name "staticBean" defined in conf/BeansFromCodeConfiguration.kt class.
+    // Linked by NAME var. @Qualifier("staticBean") not needed.
     @Autowired
     lateinit var staticBean: String
 
