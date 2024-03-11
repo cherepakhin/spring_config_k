@@ -7,7 +7,7 @@
 
 1. [Установки для Java 11](#set_java_version)
 2. [Настройки Spring beans с помощью xml-файла resources/beans.xml](#xml_file)
-3. [Настройки Spring beans с помощью @Configuration и @Bean в conf/ConfigFromJava](#configuration)
+3. [Настройки Spring beans с помощью аннотаций @Configuration и @Bean в conf/ConfigFromJava](#configuration)
 
 <a id="set_java_version"></a>
 ### 1. Установки для Java 11.
@@ -31,7 +31,7 @@ export JAVA_HOME=/usr/lib/jvm/java-1.11.0-openjdk-amd64
 ![sdk](doc/java11.png)
 
 <a id="xml_file"></a>
-### 2. С помощью xml-файла.
+### 2. Настройки Spring beans с помощью xml-файла resources/beans.xml.
 
 Определение beans в [resources/beans.xml](https://github.com/cherepakhin/spring_config_k/blob/main/src/main/resources/beans.xml):
 
@@ -58,7 +58,7 @@ class BeansFromXmlConfiguration {
 ````
 
 <a id="configuration"></a>
-### 3. С помощью @Configuration и @Bean в [conf/BeansFromCodeConfiguration.kt](https://github.com/cherepakhin/spring_config_k/blob/master/src/main/kotlin/ru/perm/v/springconfig_k/conf/BeansFromCodeConfiguration.kt).
+### 3. С помощью аннотаций @Configuration и @Bean в [conf/BeansFromCodeConfiguration.kt](https://github.com/cherepakhin/spring_config_k/blob/master/src/main/kotlin/ru/perm/v/springconfig_k/conf/BeansFromCodeConfiguration.kt).
 
 ````kotlin
 @Configuration
