@@ -48,7 +48,7 @@ export JAVA_HOME=/usr/lib/jvm/java-1.11.0-openjdk-amd64
 
 Для импортирования бинов, определенных в beans.xml, создан класс:
 
-````java
+````kotlin
 package ru.perm.v.springconfig_k.conf
 
 @Configuration
@@ -60,6 +60,22 @@ class BeansFromXmlConfiguration {
 <a id="configuration"></a>
 ### 3. С помощью @Configuration и @Bean в [conf/BeansFromCodeConfiguration.kt](https://github.com/cherepakhin/spring_config_k/blob/master/src/main/kotlin/ru/perm/v/springconfig_k/conf/BeansFromCodeConfiguration.kt).
 
+````kotlin
+@Configuration
+class BeansFromCodeConfiguration {
+
+    /**
+     * for injection use
+     * @Autowired
+     * lateinit var staticBean:String
+     */
+    @Bean("staticBean")
+    fun getMyStaticBean() = "STATIC_BEAN"
+
+    @Bean
+    fun beanOneConfigFromCode() = "BEAN_ONE"
+
+````
 ### Примечания.
 
 Используется Java 11:
