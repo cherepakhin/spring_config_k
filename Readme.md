@@ -3,11 +3,29 @@
 
 Аналогичный проект на java [https://github.com/cherepakhin/spring_config](https://github.com/cherepakhin/spring_config)
 
-1. [С помощью xml-файла resources/beans.xml](#xml_file)
-2. [С помощью @Configuration и @Bean в conf/ConfigFromJava](#configuration)
+1. [Установки для Java 11](#set_java_version)
+2. [С помощью xml-файла resources/beans.xml](#xml_file)
+3. [С помощью @Configuration и @Bean в conf/ConfigFromJava](#configuration)
+
+<a id="set_java_version"></a>
+### 1. Установки для Java 11.
+
+Использована Java 11. 
+
+````shell
+$ echo $JAVA_HOME
+> /usr/lib/jvm/java-1.11.0-openjdk-amd64
+
+````
+
+Для установки выполнить:
+
+````shell
+export JAVA_HOME=/usr/lib/jvm/java-1.11.0-openjdk-amd64
+````
 
 <a id="xml_file"></a>
-### 1. С помощью xml-файла.
+### 2. С помощью xml-файла.
 
 Определение beans в [resources/beans.xml](https://github.com/cherepakhin/spring_config_k/blob/main/src/main/resources/beans.xml):
 
@@ -25,7 +43,7 @@
 Для импортирования бинов, определенных в beans.xml, нужно создать класс [conf/BeansFromCode.java](https://github.com/cherepakhin/spring_config/blob/main/src/main/java/ru/perm/v/springconfig/conf/BeansConfiguration.java):
 
 <a id="configuration"></a>
-### 2. С помощью @Configuration и @Bean в [conf/BeansFromCode.kt](https://github.com/cherepakhin/spring_config/blob/main/src/main/java/ru/perm/v/springconfig_k/conf/BeansFromCode.kt).
+### 3. С помощью @Configuration и @Bean в [conf/BeansFromCode.kt](https://github.com/cherepakhin/spring_config/blob/main/src/main/java/ru/perm/v/springconfig_k/conf/BeansFromCode.kt).
 
 ### Примечания.
 
