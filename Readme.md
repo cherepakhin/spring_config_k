@@ -24,6 +24,10 @@ $ echo $JAVA_HOME
 export JAVA_HOME=/usr/lib/jvm/java-1.11.0-openjdk-amd64
 ````
 
+В Idea установить File->Project Structure->Project Settings->Project->SDK
+
+![sdk](doc/java11.png)
+
 <a id="xml_file"></a>
 ### 2. С помощью xml-файла.
 
