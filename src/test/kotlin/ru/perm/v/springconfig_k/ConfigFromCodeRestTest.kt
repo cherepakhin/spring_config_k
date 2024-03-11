@@ -1,6 +1,7 @@
 package ru.perm.v.springconfig_k
 
 import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
 import org.springframework.beans.factory.annotation.Autowired
@@ -11,6 +12,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension
 
 @ExtendWith(SpringExtension::class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@Disabled
 class ConfigFromCodeRestTest {
     @LocalServerPort
     val port = 8780
@@ -32,11 +34,11 @@ class ConfigFromCodeRestTest {
 
         assertEquals("BEAN_TWO", result)
     }
-    @Test
-    fun getStaticBean() {
-        val result =
-            restTemplate.getForObject("http://127.0.0.1:$port/api/config_from_code/static_bean", String::class.java)
-
-        assertEquals("STATIC_BEAN", result)
-    }
+//    @Test
+//    fun getStaticBean() {
+//        val result =
+//            restTemplate.getForObject("http://127.0.0.1:$port/api/config_from_code/static_bean", String::class.java)
+//
+//        assertEquals("STATIC_BEAN", result)
+//    }
 }

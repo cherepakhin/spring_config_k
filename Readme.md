@@ -46,10 +46,10 @@ export JAVA_HOME=/usr/lib/jvm/java-1.11.0-openjdk-amd64
 </bean>
 ````
 
-Для импортирования бинов, определенных в beans.xml, нужно создать класс [conf/BeansFromCode.java](https://github.com/cherepakhin/spring_config/blob/main/src/main/java/ru/perm/v/springconfig/conf/BeansConfiguration.java):
+Для импортирования бинов, определенных в beans.xml, ????????
 
 <a id="configuration"></a>
-### 3. С помощью @Configuration и @Bean в [conf/BeansFromCode.kt](https://github.com/cherepakhin/spring_config/blob/main/src/main/java/ru/perm/v/springconfig_k/conf/BeansFromCode.kt).
+### 3. С помощью @Configuration и @Bean в [conf/BeansFromCodeConfiguration.kt](https://github.com/cherepakhin/spring_config_k/blob/master/src/main/kotlin/ru/perm/v/springconfig_k/conf/BeansFromCodeConfiguration.kt).
 
 ### Примечания.
 
