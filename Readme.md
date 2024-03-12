@@ -94,6 +94,8 @@ class BeansFromCodeConfiguration {
 
 ````
 
+При использовании аннотаций для точного указания имени Spring bean использовано @Bean("staticBean"). В классах, которые будут использовать bean можно использовать __@Autowired staticBean__ (см. [rest/ConfigFromCodeRest.kt](https://github.com/cherepakhin/spring_config_k/blob/master/src/main/kotlin/ru/perm/v/springconfig_k/rest/ConfigFromCodeRest.kt)). 
+
 <a id="tests"></a>
 ### 4. Тесты
 
