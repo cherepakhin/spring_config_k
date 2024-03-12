@@ -3,12 +3,13 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
 	id("org.springframework.boot") version "2.5.6"
 	id("io.spring.dependency-management") version "1.0.11.RELEASE"
+	id("maven-publish")
 	kotlin("jvm") version "1.5.21"
 	kotlin("plugin.spring") version "1.5.21"
 }
 
 group = "ru.perm.v"
-version = "0.0.1-SNAPSHOT"
+version = "0.0.1"
 java.sourceCompatibility = JavaVersion.VERSION_11
 
 repositories {
@@ -32,4 +33,25 @@ tasks.withType<KotlinCompile> {
 
 tasks.withType<Test> {
 	useJUnitPlatform()
+}
+
+publishing {
+	repositories {
+		maven {
+			url = uri("http://v.perm.ru:8082/repository/ru.perm.v/")
+			isAllowInsecureProtocol = true
+			//  publish в nexus "./gradlew publish" из ноута и Jenkins проходит
+			// export NEXUS_CRED_USR=admin
+			// echo $NEXUS_CRED_USR
+			credentials {
+				username = System.getenv("NEXUS_CRED_USR")
+				password = System.getenv("NEXUS_CRED_PSW")
+			}
+		}
+	}
+	publications {
+		create<MavenPublication>("maven"){
+			artifact(tasks["bootJar"])
+		}
+	}
 }
