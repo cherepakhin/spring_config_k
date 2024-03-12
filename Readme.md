@@ -3,7 +3,7 @@
 
 Простой проект с конфигурацией Spring beans в xml __И__ использования аннотации @Bean. Для подготовки опытов с проектом с [Camel](https://github.com/cherepakhin/camel_rest).
 
-В [resources/beans.xml](https://github.com/cherepakhin/spring_config_k/blob/master/src/master/resources/beans.xml) определено несколько приветствий на разных языках. Установлено приветствие по умолчанию. Для доступа к приветствиям сделаны Rest контроллеры. Часть конфигурации задана в beans.xml , часть в аннотациях с использованием __@Bean__.  
+В [resources/beans.xml](https://github.com/cherepakhin/spring_config_k/blob/master/src/main/resources/beans.xml) определено несколько приветствий на разных языках. Установлено приветствие по умолчанию. Для доступа к приветствиям сделаны Rest контроллеры. Часть конфигурации задана в beans.xml , часть в аннотациях с использованием __@Bean__.  
 
 Аналогичный проект на __Java__ [https://github.com/cherepakhin/spring_config](https://github.com/cherepakhin/spring_config)
 
@@ -18,7 +18,7 @@
 <a id="xml_file"></a>
 ### 1. Настройки Spring beans с помощью xml-файла resources/beans.xml.
 
-Определение beans в [resources/beans.xml](https://github.com/cherepakhin/spring_config_k/blob/master/src/master/resources/beans.xml):
+Определение beans в [resources/beans.xml](https://github.com/cherepakhin/spring_config_k/blob/master/src/main/resources/beans.xml):
 
 ````xml
 <bean id="russianGreeterXml" class="ru.perm.v.springconfig_k.greeters.RussianGreeter"/>
