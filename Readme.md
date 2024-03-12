@@ -41,9 +41,10 @@ class BeansFromXmlConfiguration {
 }
 ````
 
-После этих мероприятий бины определенные в beans.xml будут в доступны в контексте Spring (см. [rest/ConfigFromXmlRest.kt](https://github.com/cherepakhin/spring_config_k/blob/master/src/master/kotlin/ru/perm/v/springconfig_k/rest/ConfigFromXmlRest.kt) ). 
+После этих мероприятий бины определенные в beans.xml будут в доступны в контексте Spring (см. [rest/ConfigFromXmlRest.kt](https://github.com/cherepakhin/spring_config_k/blob/master/src/main/kotlin/ru/perm/v/springconfig_k/rest/ConfigFromXmlRest.kt) ).
 
-Аннотация @Qualifier __в данном случае__ используется для уточнения связи, т.к. RussianGreeter, GermanyGreeter, EnglishGreeter реализуют один и тот же интерфейс [greeters/Greeter.kt](https://github.com/cherepakhin/spring_config_k/blob/master/src/master/kotlin/ru/perm/v/springconfig_k/greeters/Greeter.kt). Без этого Spring не сможет определить, какой bean использовать в целевом классе: 
+
+Аннотация @Qualifier __в данном случае__ используется для уточнения связи, т.к. RussianGreeter, GermanyGreeter, EnglishGreeter реализуют один и тот же интерфейс [greeters/Greeter.kt](https://github.com/cherepakhin/spring_config_k/blob/master/src/main/kotlin/ru/perm/v/springconfig_k/greeters/Greeter.kt). Без этого Spring не сможет определить, какой bean использовать в целевом классе: 
 
 ````kotlin
 @RestController
@@ -56,7 +57,7 @@ class ConfigFromXmlRest {
 ````
 
 <a id="configuration"></a>
-### 2. С помощью аннотаций @Configuration и @Bean в [conf/BeansFromCodeConfiguration.kt](https://github.com/cherepakhin/spring_config_k/blob/master/src/master/kotlin/ru/perm/v/springconfig_k/conf/BeansFromCodeConfiguration.kt).
+### 2. С помощью аннотаций @Configuration и @Bean в [conf/BeansFromCodeConfiguration.kt](https://github.com/cherepakhin/spring_config_k/blob/master/src/main/kotlin/ru/perm/v/springconfig_k/conf/BeansFromCodeConfiguration.kt).
 
 Определение bean:
 
@@ -94,7 +95,7 @@ lateinit var beanOneConfigFromCode: String
 
 ````
 
-При использовании аннотаций для точного указания имени Spring bean использовано @Bean("__staticBean__"). В классах, которые будут использовать bean можно использовать __@Autowired staticBean__ (см. [rest/ConfigFromCodeRest.kt](https://github.com/cherepakhin/spring_config_k/blob/master/src/master/kotlin/ru/perm/v/springconfig_k/rest/ConfigFromCodeRest.kt)). 
+При использовании аннотаций для точного указания имени Spring bean использовано @Bean("__staticBean__"). В классах, которые будут использовать bean можно использовать __@Autowired staticBean__ (см. [rest/ConfigFromCodeRest.kt](https://github.com/cherepakhin/spring_config_k/blob/master/src/main/kotlin/ru/perm/v/springconfig_k/rest/ConfigFromCodeRest.kt)). 
 
 <a id="tests"></a>
 ### 3. Тесты
