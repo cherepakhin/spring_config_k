@@ -76,6 +76,8 @@ class ConfigFromXmlRest {
 <a id="configuration"></a>
 ### 3. С помощью аннотаций @Configuration и @Bean в [conf/BeansFromCodeConfiguration.kt](https://github.com/cherepakhin/spring_config_k/blob/master/src/main/kotlin/ru/perm/v/springconfig_k/conf/BeansFromCodeConfiguration.kt).
 
+Определение bean:
+
 ````kotlin
 @Configuration
 class BeansFromCodeConfiguration {
@@ -90,6 +92,23 @@ class BeansFromCodeConfiguration {
 
     @Bean
     fun beanOneConfigFromCode() = "BEAN_ONE"
+
+````
+
+Использование:
+
+````kotlin
+@RestController
+@RequestMapping("/config_from_code")
+class ConfigFromCodeRest {
+// simple link by NAME var to config name bean
+@Autowired
+lateinit var beanOneConfigFromCode: String
+
+    // name var and inject bean have different name. For link used QUALIFIER
+    @Autowired
+    @Qualifier("beanTwoConfigFromCode")
+    lateinit var myVarBeanTwoConfigFromCode: String
 
 ````
 
