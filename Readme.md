@@ -7,38 +7,16 @@
 
 Аналогичный проект на java [https://github.com/cherepakhin/spring_config](https://github.com/cherepakhin/spring_config)
 
-1. [Установки для Java 11](#set_java_version)
-2. [Настройки Spring beans с помощью xml-файла resources/beans.xml](#xml_file)
-3. [Настройки Spring beans с помощью аннотаций @Configuration и @Bean в conf/ConfigFromJava](#configuration)
-4. [Тесты](#tests)
-5. [Const value bean](#const_value)
-6. [Сборка jar](#build_jar)
-7. [Разное](#other)
-
-
-<a id="set_java_version"></a>
-### 1. Установки для Java 11.
-
-Использована Java 11. 
-
-````shell
-$ echo $JAVA_HOME
-> /usr/lib/jvm/java-1.11.0-openjdk-amd64
-
-````
-
-Для установки выполнить:
-
-````shell
-export JAVA_HOME=/usr/lib/jvm/java-1.11.0-openjdk-amd64
-````
-
-В Idea установить File->Project Structure->Project Settings->Project->SDK
-
-![sdk](doc/java11.png)
+1. [Настройки Spring beans с помощью xml-файла resources/beans.xml](#xml_file)
+2. [Настройки Spring beans с помощью аннотаций @Configuration и @Bean в conf/ConfigFromJava](#configuration)
+3. [Тесты](#tests)
+4. [Const value bean](#const_value)
+5. [Сборка jar](#build_jar)
+6. [Разное](#other)
+7. [Установки для Java 11](#set_java_version)
 
 <a id="xml_file"></a>
-### 2. Настройки Spring beans с помощью xml-файла resources/beans.xml.
+### 1. Настройки Spring beans с помощью xml-файла resources/beans.xml.
 
 Определение beans в [resources/beans.xml](https://github.com/cherepakhin/spring_config_k/blob/main/src/main/resources/beans.xml):
 
@@ -78,7 +56,7 @@ class ConfigFromXmlRest {
 ````
 
 <a id="configuration"></a>
-### 3. С помощью аннотаций @Configuration и @Bean в [conf/BeansFromCodeConfiguration.kt](https://github.com/cherepakhin/spring_config_k/blob/master/src/main/kotlin/ru/perm/v/springconfig_k/conf/BeansFromCodeConfiguration.kt).
+### 2. С помощью аннотаций @Configuration и @Bean в [conf/BeansFromCodeConfiguration.kt](https://github.com/cherepakhin/spring_config_k/blob/master/src/main/kotlin/ru/perm/v/springconfig_k/conf/BeansFromCodeConfiguration.kt).
 
 Определение bean:
 
@@ -119,7 +97,7 @@ lateinit var beanOneConfigFromCode: String
 При использовании аннотаций для точного указания имени Spring bean использовано @Bean("__staticBean__"). В классах, которые будут использовать bean можно использовать __@Autowired staticBean__ (см. [rest/ConfigFromCodeRest.kt](https://github.com/cherepakhin/spring_config_k/blob/master/src/main/kotlin/ru/perm/v/springconfig_k/rest/ConfigFromCodeRest.kt)). 
 
 <a id="tests"></a>
-### 4. Тесты
+### 3. Тесты
 
 Используется Java 11:
 
@@ -129,7 +107,7 @@ lateinit var beanOneConfigFromCode: String
 ````
 
 <a id="const_value"></a>
-### 5. Const value bean
+### 4. Const value bean
 
 Static в Kotlin нет. Поэтому показан следующий вариант:
 
@@ -160,7 +138,7 @@ class BeansFromCodeConfiguration {
 ````
 
 <a id="build_jar"></a>
-### 6. Сборка jar
+### 5. Сборка jar
 
 ````shell
 ./gradlew bootJar
@@ -175,7 +153,7 @@ java -jar build/libs/spring_config_k-0.0.1-SNAPSHOT.jar
 ````
 
 <a id="other"></a>
-### 7. Разное:
+### 6. Разное:
 
 Можно задать значения переменных application.yaml через специальную переменную __SPRING_APPLICATION_JSON__:
 
@@ -188,3 +166,24 @@ $ java -jar build/libs/spring_config_k-0.0.1-SNAPSHOT.jar
 INFO 23327 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8960 (http)
 .... 
 ````
+
+<a id="set_java_version"></a>
+### 7. Установки для Java 11.
+
+Использована Java 11.
+
+````shell
+$ echo $JAVA_HOME
+> /usr/lib/jvm/java-1.11.0-openjdk-amd64
+
+````
+
+Для установки выполнить:
+
+````shell
+export JAVA_HOME=/usr/lib/jvm/java-1.11.0-openjdk-amd64
+````
+
+В Idea установить File->Project Structure->Project Settings->Project->SDK
+
+![sdk](doc/java11.png)
