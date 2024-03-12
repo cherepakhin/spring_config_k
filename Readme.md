@@ -12,6 +12,9 @@
 3. [Настройки Spring beans с помощью аннотаций @Configuration и @Bean в conf/ConfigFromJava](#configuration)
 4. [Тесты](#tests)
 5. [Const value bean](#const_value)
+6. [Сборка jar](#build_jar)
+7. [Разное](#other)
+
 
 <a id="set_java_version"></a>
 ### 1. Установки для Java 11.
@@ -156,6 +159,7 @@ class BeansFromCodeConfiguration {
 
 ````
 
+<a id="build_jar"></a>
 ### 6. Сборка jar
 
 ````shell
@@ -168,4 +172,17 @@ class BeansFromCodeConfiguration {
 ````shell
 java -jar build/libs/spring_config_k-0.0.1-SNAPSHOT.jar
 
+````
+
+<a id="other"></a>
+### 7. Разное:
+
+Можно задать значения переменных application.yaml через специальноую переменную __SPRING_APPLICATION_JSON__:
+
+````shell
+$ export SPRING_APPLICATION_JSON='{"server":{"port":8960}}'
+$ java -jar build/libs/spring_config_k-0.0.1-SNAPSHOT.jar
+....
+INFO 23327 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8960 (http)
+.... 
 ````
