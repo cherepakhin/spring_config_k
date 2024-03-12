@@ -13,8 +13,6 @@ import ru.perm.v.springconfig_k.service.GreeterService
 @RestController
 @RequestMapping("/config_from_xml")
 class ConfigFromXmlRest {
-    // simple link by NAME var to config name bean
-    // name var and inject bean have different name. For link used QUALIFIER
     @Autowired
     @Qualifier("russianGreeterXml")
     lateinit var russianGreeterXmlService: RussianGreeter
