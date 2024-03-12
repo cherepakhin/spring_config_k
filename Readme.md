@@ -1,7 +1,9 @@
 Различные способы задания конфигурации Spring Beans с Kotlin
 ----------------
 
-Для чего этот проект? Для подготовки опытов с проектом с [Camel](https://github.com/cherepakhin/camel_rest).
+Простой проект с конфигурацией Spring beans в xml __И__ использования аннотации @Bean. Для подготовки опытов с проектом с [Camel](https://github.com/cherepakhin/camel_rest).
+
+В [resources/beans.xml](https://github.com/cherepakhin/spring_config_k/blob/main/src/main/resources/beans.xml) определено несколько приветствий на разных языках. Установлено приветствие по умолчанию. Для доступа к приветствиям сделаны Rest контроллеры. Часть конфигурации задана в beans.xml , часть в аннотациях.  
 
 Аналогичный проект на java [https://github.com/cherepakhin/spring_config](https://github.com/cherepakhin/spring_config)
 
