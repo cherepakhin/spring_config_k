@@ -5,7 +5,7 @@
 
 В [resources/beans.xml](https://github.com/cherepakhin/spring_config_k/blob/main/src/main/resources/beans.xml) определено несколько приветствий на разных языках. Установлено приветствие по умолчанию. Для доступа к приветствиям сделаны Rest контроллеры. Часть конфигурации задана в beans.xml , часть в аннотациях с использованием __@Bean__.  
 
-Аналогичный проект на java [https://github.com/cherepakhin/spring_config](https://github.com/cherepakhin/spring_config)
+Аналогичный проект на __Java__ [https://github.com/cherepakhin/spring_config](https://github.com/cherepakhin/spring_config)
 
 1. [Настройки Spring beans с помощью xml-файла resources/beans.xml](#xml_file)
 2. [Настройки Spring beans с помощью аннотаций @Configuration и @Bean в conf/ConfigFromJava](#configuration)
