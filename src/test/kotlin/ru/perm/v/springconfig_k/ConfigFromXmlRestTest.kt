@@ -13,7 +13,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class ConfigFromXmlRestTest {
     @LocalServerPort
-    val port = 8780
+    val port = 8980
 
     @Autowired
     lateinit var restTemplate: TestRestTemplate
