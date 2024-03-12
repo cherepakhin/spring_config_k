@@ -20,45 +20,52 @@ class ConfigFromXmlRestTest {
 
     @Test
     fun getEnglishGreeterXml() {
+        System.setProperty("user.name", "testuser")
+
         val result =
             restTemplate.getForObject(
                 "http://127.0.0.1:$port/api/config_from_xml/english_greeter_xml/",
                 String::class.java
             )
 
-        assertEquals("Hello, vasi", result)
+        assertEquals("Hello, testuser", result)
     }
 
     @Test
     fun getGermanyGreeterXml() {
+        System.setProperty("user.name", "testuser")
+
         val result =
             restTemplate.getForObject(
                 "http://127.0.0.1:$port/api/config_from_xml/germany_greeter_xml/",
                 String::class.java
             )
 
-        assertEquals("Guten Tag, vasi", result)
+        assertEquals("Guten Tag, testuser", result)
     }
 
     @Test
     fun getRussianGreeterXml() {
+        System.setProperty("user.name", "testuser")
+
         val result =
             restTemplate.getForObject(
                 "http://127.0.0.1:$port/api/config_from_xml/russian_greeter_xml/",
                 String::class.java
             )
 
-        assertEquals("Привет, vasi", result)
+        assertEquals("Привет, tstuser", result)
     }
 
     @Test
     fun getSelectedGreeterXml() {
+        System.setProperty("user.name", "testuser")
         val result =
             restTemplate.getForObject(
                 "http://127.0.0.1:$port/api/config_from_xml/selected_greeter_xml/",
                 String::class.java
             )
 
-        assertEquals("Привет, vasi", result)
+        assertEquals("Привет, testuser", result)
     }
 }
