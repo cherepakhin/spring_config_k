@@ -123,3 +123,33 @@ lateinit var beanOneConfigFromCode: String
 ~/prog/kotlin/spring_config_k$ export JAVA_HOME=/usr/lib/jvm/java-1.11.0-openjdk-amd64
 ~/prog/kotlin/spring_config_k$ ./gradlew clean test
 ````
+
+### 5. Const value bean
+
+Static в Kotlin нет. Поэтому показан следующий вариант:
+
+Определение константы:
+
+````kotlin
+@Configuration
+class BeansFromCodeConfiguration {
+....
+    
+    @get:Bean("fromValue")
+    val fromValue = "FROM_VALUE"
+}
+````
+
+Использование в ConfigFromCodeRest:
+
+````kotlin
+@RestController
+@RequestMapping("/config_from_code") {
+    ....
+    @Autowired
+    @Qualifier("fromValue")
+    lateinit var myVarFromValue: String
+    ...    
+}
+
+````
