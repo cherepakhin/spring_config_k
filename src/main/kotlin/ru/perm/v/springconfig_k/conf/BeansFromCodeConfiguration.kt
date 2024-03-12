@@ -11,8 +11,8 @@ class BeansFromCodeConfiguration {
      * @Autowired
      * lateinit var staticBean:String
      */
-    @Bean("staticBean")
-    fun getMyStaticBean() = "STATIC_BEAN"
+    @Bean("namedBean")
+    fun getMyStaticBean() = "NAMED_BEAN"
 
     @Bean
     fun beanOneConfigFromCode() = "BEAN_ONE"
@@ -20,6 +20,7 @@ class BeansFromCodeConfiguration {
     @Bean
     fun beanTwoConfigFromCode() = "BEAN_TWO"
 
+    // As static value
     @get:Bean("fromValue")
     val fromValue = "FROM_VALUE"
 }

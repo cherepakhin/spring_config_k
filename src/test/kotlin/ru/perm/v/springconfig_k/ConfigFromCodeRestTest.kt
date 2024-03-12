@@ -34,11 +34,11 @@ class ConfigFromCodeRestTest {
         assertEquals("BEAN_TWO", result)
     }
     @Test
-    fun getStaticBean() {
+    fun getNamedBean() {
         val result =
-            restTemplate.getForObject("http://127.0.0.1:$port/api/config_from_code/static_bean", String::class.java)
+            restTemplate.getForObject("http://127.0.0.1:$port/api/config_from_code/named_bean", String::class.java)
 
-        assertEquals("STATIC_BEAN", result)
+        assertEquals("NAMED_BEAN", result)
     }
 
     @Test

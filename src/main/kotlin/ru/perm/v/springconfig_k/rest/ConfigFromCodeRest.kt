@@ -27,20 +27,21 @@ class ConfigFromCodeRest {
     // bean with name "staticBean" defined in conf/BeansFromCodeConfiguration.kt class.
     // Linked by NAME var. @Qualifier("staticBean") not needed.
     @Autowired
-    lateinit var staticBean: String
+    lateinit var namedBean: String
 
     @Autowired
     @Qualifier("fromValue")
     lateinit var myVarFromValue: String
 
+    // ==================================================== REST methods:
     @GetMapping("/bean_one")
     fun beanOne() = beanOneConfigFromCode
 
     @GetMapping("/bean_two")
     fun beanTwo() = myVarBeanTwoConfigFromCode
 
-    @GetMapping("/static_bean")
-    fun staticBean() = staticBean
+    @GetMapping("/named_bean")
+    fun namedBean() = namedBean
 
     @GetMapping("/from_value")
     fun fromValue() = myVarFromValue
