@@ -11,6 +11,7 @@
 2. [Настройки Spring beans с помощью xml-файла resources/beans.xml](#xml_file)
 3. [Настройки Spring beans с помощью аннотаций @Configuration и @Bean в conf/ConfigFromJava](#configuration)
 4. [Тесты](#tests)
+5. [Const value bean](#const_value)
 
 <a id="set_java_version"></a>
 ### 1. Установки для Java 11.
@@ -124,6 +125,7 @@ lateinit var beanOneConfigFromCode: String
 ~/prog/kotlin/spring_config_k$ ./gradlew clean test
 ````
 
+<a id="const_value"></a>
 ### 5. Const value bean
 
 Static в Kotlin нет. Поэтому показан следующий вариант:
@@ -151,5 +153,19 @@ class BeansFromCodeConfiguration {
     lateinit var myVarFromValue: String
     ...    
 }
+
+````
+
+### 6. Сборка jar
+
+````shell
+./gradlew bootJar
+
+````
+
+Собранный jar будет в build/libs. Запуск:
+
+````shell
+java -jar build/libs/spring_config_k-0.0.1-SNAPSHOT.jar
 
 ````
