@@ -39,13 +39,12 @@ export JAVA_HOME=/usr/lib/jvm/java-1.11.0-openjdk-amd64
 Определение beans в [resources/beans.xml](https://github.com/cherepakhin/spring_config_k/blob/main/src/main/resources/beans.xml):
 
 ````xml
+<bean id="russianGreeterXml" class="ru.perm.v.springconfig_k.greeters.RussianGreeter"/>
+<bean id="germanyGreeterXml" class="ru.perm.v.springconfig_k.greeters.GermanyGreeter"/>
+<bean id="englishGreeterXml" class="ru.perm.v.springconfig_k.greeters.EnglishGreeter"/>
 
-<bean id="russianGreeter" class="ru.perm.v.springconfig_k.greeters.RussianGreeter"/>
-<bean id="germanyGreeter" class="ru.perm.v.springconfig_k.greeters.GermanyGreeter"/>
-<bean id="englishGreeter" class="ru.perm.v.springconfig_k.greeters.EnglishGreeter"/>
-
-<bean id="selectedGreeterService" class="ru.perm.v.springconfig.service.GreeterService">
-<property name="greeter" ref="russianGreeter"/>
+<bean id="selectedGreeterServiceXml" class="ru.perm.v.springconfig_k.service.GreeterService">
+<property name="greeter" ref="russianGreeterXml"/>
 </bean>
 ````
 
