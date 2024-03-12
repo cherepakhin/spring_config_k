@@ -33,6 +33,7 @@ tasks.withType<KotlinCompile> {
 
 tasks.withType<Test> {
 	useJUnitPlatform()
+	jvmArgs("--add-opens", "java.base/sun.nio.ch=ALL-UNNAMED")
 }
 
 publishing {
