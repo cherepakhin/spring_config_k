@@ -177,7 +177,7 @@ java -jar build/libs/spring_config_k-0.0.1-SNAPSHOT.jar
 <a id="other"></a>
 ### 7. Разное:
 
-Можно задать значения переменных application.yaml через специальноую переменную __SPRING_APPLICATION_JSON__:
+Можно задать значения переменных application.yaml через специальную переменную __SPRING_APPLICATION_JSON__:
 
 Пример:
 
