@@ -3,7 +3,7 @@
 
 Простой проект с конфигурацией Spring beans в xml __И__ использования аннотации @Bean. Для подготовки опытов с проектом с [Camel](https://github.com/cherepakhin/camel_rest).
 
-В [resources/beans.xml](https://github.com/cherepakhin/spring_config_k/blob/main/src/main/resources/beans.xml) определено несколько приветствий на разных языках. Установлено приветствие по умолчанию. Для доступа к приветствиям сделаны Rest контроллеры. Часть конфигурации задана в beans.xml , часть в аннотациях с использованием __@Bean__.  
+В [resources/beans.xml](https://github.com/cherepakhin/spring_config_k/blob/master/src/master/resources/beans.xml) определено несколько приветствий на разных языках. Установлено приветствие по умолчанию. Для доступа к приветствиям сделаны Rest контроллеры. Часть конфигурации задана в beans.xml , часть в аннотациях с использованием __@Bean__.  
 
 Аналогичный проект на __Java__ [https://github.com/cherepakhin/spring_config](https://github.com/cherepakhin/spring_config)
 
@@ -18,7 +18,7 @@
 <a id="xml_file"></a>
 ### 1. Настройки Spring beans с помощью xml-файла resources/beans.xml.
 
-Определение beans в [resources/beans.xml](https://github.com/cherepakhin/spring_config_k/blob/main/src/main/resources/beans.xml):
+Определение beans в [resources/beans.xml](https://github.com/cherepakhin/spring_config_k/blob/master/src/master/resources/beans.xml):
 
 ````xml
 <bean id="russianGreeterXml" class="ru.perm.v.springconfig_k.greeters.RussianGreeter"/>
@@ -41,9 +41,9 @@ class BeansFromXmlConfiguration {
 }
 ````
 
-После этих мероприятий бины определенные в beans.xml будут в доступны в контексте Spring (см. [rest/ConfigFromXmlRest.kt](https://github.com/cherepakhin/spring_config_k/blob/master/src/main/kotlin/ru/perm/v/springconfig_k/rest/ConfigFromXmlRest.kt) ). 
+После этих мероприятий бины определенные в beans.xml будут в доступны в контексте Spring (см. [rest/ConfigFromXmlRest.kt](https://github.com/cherepakhin/spring_config_k/blob/master/src/master/kotlin/ru/perm/v/springconfig_k/rest/ConfigFromXmlRest.kt) ). 
 
-Аннотация @Qualifier __в данном случае__ используется для уточнения связи, т.к. RussianGreeter, GermanyGreeter, EnglishGreeter реализуют один и тот же интерфейс [greeters/Greeter.kt](https://github.com/cherepakhin/spring_config_k/blob/master/src/main/kotlin/ru/perm/v/springconfig_k/greeters/Greeter.kt). Без этого Spring не сможет определить, какой bean использовать в целевом классе: 
+Аннотация @Qualifier __в данном случае__ используется для уточнения связи, т.к. RussianGreeter, GermanyGreeter, EnglishGreeter реализуют один и тот же интерфейс [greeters/Greeter.kt](https://github.com/cherepakhin/spring_config_k/blob/master/src/master/kotlin/ru/perm/v/springconfig_k/greeters/Greeter.kt). Без этого Spring не сможет определить, какой bean использовать в целевом классе: 
 
 ````kotlin
 @RestController
@@ -56,7 +56,7 @@ class ConfigFromXmlRest {
 ````
 
 <a id="configuration"></a>
-### 2. С помощью аннотаций @Configuration и @Bean в [conf/BeansFromCodeConfiguration.kt](https://github.com/cherepakhin/spring_config_k/blob/master/src/main/kotlin/ru/perm/v/springconfig_k/conf/BeansFromCodeConfiguration.kt).
+### 2. С помощью аннотаций @Configuration и @Bean в [conf/BeansFromCodeConfiguration.kt](https://github.com/cherepakhin/spring_config_k/blob/master/src/master/kotlin/ru/perm/v/springconfig_k/conf/BeansFromCodeConfiguration.kt).
 
 Определение bean:
 
@@ -94,7 +94,7 @@ lateinit var beanOneConfigFromCode: String
 
 ````
 
-При использовании аннотаций для точного указания имени Spring bean использовано @Bean("__staticBean__"). В классах, которые будут использовать bean можно использовать __@Autowired staticBean__ (см. [rest/ConfigFromCodeRest.kt](https://github.com/cherepakhin/spring_config_k/blob/master/src/main/kotlin/ru/perm/v/springconfig_k/rest/ConfigFromCodeRest.kt)). 
+При использовании аннотаций для точного указания имени Spring bean использовано @Bean("__staticBean__"). В классах, которые будут использовать bean можно использовать __@Autowired staticBean__ (см. [rest/ConfigFromCodeRest.kt](https://github.com/cherepakhin/spring_config_k/blob/master/src/master/kotlin/ru/perm/v/springconfig_k/rest/ConfigFromCodeRest.kt)). 
 
 <a id="tests"></a>
 ### 3. Тесты
@@ -163,7 +163,7 @@ java -jar build/libs/spring_config_k-0.0.1-SNAPSHOT.jar
 $ export SPRING_APPLICATION_JSON='{"server":{"port":8960}}'
 $ java -jar build/libs/spring_config_k-0.0.1-SNAPSHOT.jar
 ....
-INFO 23327 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8960 (http)
+INFO 23327 --- [           master] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8960 (http)
 .... 
 ````
 
