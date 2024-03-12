@@ -54,7 +54,7 @@ class ConfigFromXmlRestTest {
                 String::class.java
             )
 
-        assertEquals("Привет, tstuser", result)
+        assertEquals("Привет, testuser", result)
     }
 
     @Test
