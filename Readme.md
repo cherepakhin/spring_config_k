@@ -10,6 +10,7 @@
 1. [Установки для Java 11](#set_java_version)
 2. [Настройки Spring beans с помощью xml-файла resources/beans.xml](#xml_file)
 3. [Настройки Spring beans с помощью аннотаций @Configuration и @Bean в conf/ConfigFromJava](#configuration)
+4. [Тесты](#tests)
 
 <a id="set_java_version"></a>
 ### 1. Установки для Java 11.
@@ -78,7 +79,9 @@ class BeansFromCodeConfiguration {
     fun beanOneConfigFromCode() = "BEAN_ONE"
 
 ````
-### Примечания.
+
+<a id="tests"></a>
+### 4. Тесты
 
 Используется Java 11:
 
