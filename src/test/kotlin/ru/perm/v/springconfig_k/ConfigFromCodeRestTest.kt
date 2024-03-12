@@ -40,4 +40,12 @@ class ConfigFromCodeRestTest {
 
         assertEquals("STATIC_BEAN", result)
     }
+
+    @Test
+    fun getFromValue() {
+        val result =
+            restTemplate.getForObject("http://127.0.0.1:$port/api/config_from_code/from_value", String::class.java)
+
+        assertEquals("FROM_VALUE", result)
+    }
 }

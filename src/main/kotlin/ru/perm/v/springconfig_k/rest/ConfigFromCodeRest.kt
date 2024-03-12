@@ -29,6 +29,10 @@ class ConfigFromCodeRest {
     @Autowired
     lateinit var staticBean: String
 
+    @Autowired
+    @Qualifier("fromValue")
+    lateinit var myVarFromValue: String
+
     @GetMapping("/bean_one")
     fun beanOne() = beanOneConfigFromCode
 
@@ -37,5 +41,8 @@ class ConfigFromCodeRest {
 
     @GetMapping("/static_bean")
     fun staticBean() = staticBean
+
+    @GetMapping("/from_value")
+    fun fromValue() = myVarFromValue
 
 }

@@ -19,4 +19,7 @@ class BeansFromCodeConfiguration {
 
     @Bean
     fun beanTwoConfigFromCode() = "BEAN_TWO"
+
+    @get:Bean("fromValue")
+    val fromValue = "FROM_VALUE"
 }
