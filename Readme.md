@@ -3,7 +3,7 @@
 
 Простой проект с конфигурацией Spring beans в xml __И__ использования аннотации @Bean. Для подготовки опытов с проектом с [Camel](https://github.com/cherepakhin/camel_rest).
 
-В [resources/beans.xml](https://github.com/cherepakhin/spring_config_k/blob/main/src/main/resources/beans.xml) определено несколько приветствий на разных языках. Установлено приветствие по умолчанию. Для доступа к приветствиям сделаны Rest контроллеры. Часть конфигурации задана в beans.xml , часть в аннотациях.  
+В [resources/beans.xml](https://github.com/cherepakhin/spring_config_k/blob/main/src/main/resources/beans.xml) определено несколько приветствий на разных языках. Установлено приветствие по умолчанию. Для доступа к приветствиям сделаны Rest контроллеры. Часть конфигурации задана в beans.xml , часть в аннотациях с использованием __@Bean__.  
 
 Аналогичный проект на java [https://github.com/cherepakhin/spring_config](https://github.com/cherepakhin/spring_config)
 
@@ -59,6 +59,8 @@ package ru.perm.v.springconfig_k.conf
 class BeansFromXmlConfiguration {
 }
 ````
+
+После этих мероприятий бины определенные в beans.xml будут в доступны в контексте Spring (см. [rest/ConfigFromXmlRest.kt](https://github.com/cherepakhin/spring_config_k/blob/master/src/main/kotlin/ru/perm/v/springconfig_k/rest/ConfigFromXmlRest.kt) ). Аннотация @Qualifier __в данном случае__ используется для уточнения связи, т.к. RussianGreeter, GermanyGreeter, EnglishGreeter реализуют один и тот же интерфейс [greeters/Greeter.kt](https://github.com/cherepakhin/spring_config_k/blob/master/src/main/kotlin/ru/perm/v/springconfig_k/greeters/Greeter.kt). Без этого Spring не сможет определить, какой bean использовать в целевом классе. 
 
 <a id="configuration"></a>
 ### 3. С помощью аннотаций @Configuration и @Bean в [conf/BeansFromCodeConfiguration.kt](https://github.com/cherepakhin/spring_config_k/blob/master/src/main/kotlin/ru/perm/v/springconfig_k/conf/BeansFromCodeConfiguration.kt).
