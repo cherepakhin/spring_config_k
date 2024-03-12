@@ -73,6 +73,7 @@ class ConfigFromXmlRest {
     lateinit var russianGreeterXmlService: RussianGreeter
 ....
 ````
+
 <a id="configuration"></a>
 ### 3. С помощью аннотаций @Configuration и @Bean в [conf/BeansFromCodeConfiguration.kt](https://github.com/cherepakhin/spring_config_k/blob/master/src/main/kotlin/ru/perm/v/springconfig_k/conf/BeansFromCodeConfiguration.kt).
 
