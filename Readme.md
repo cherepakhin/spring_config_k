@@ -44,7 +44,7 @@ class BeansFromXmlConfiguration {
 После этих мероприятий бины определенные в beans.xml будут в доступны в контексте Spring (см. [rest/ConfigFromXmlRest.kt](https://github.com/cherepakhin/spring_config_k/blob/master/src/main/kotlin/ru/perm/v/springconfig_k/rest/ConfigFromXmlRest.kt) ).
 
 
-Аннотация @Qualifier __в данном случае__ используется для уточнения связи, т.к. RussianGreeter, GermanyGreeter, EnglishGreeter реализуют один и тот же интерфейс [greeters/Greeter.kt](https://github.com/cherepakhin/spring_config_k/blob/master/src/main/kotlin/ru/perm/v/springconfig_k/greeters/Greeter.kt). Без этого Spring не сможет определить, какой bean использовать в целевом классе: 
+Аннотация @Qualifier используется для уточнения связи, т.к. RussianGreeter, GermanyGreeter, EnglishGreeter реализуют один и тот же интерфейс [greeters/Greeter.kt](https://github.com/cherepakhin/spring_config_k/blob/master/src/main/kotlin/ru/perm/v/springconfig_k/greeters/Greeter.kt). Без этого Spring не сможет определить, какой bean использовать в целевом классе: 
 
 ````kotlin
 @RestController
@@ -52,7 +52,15 @@ class BeansFromXmlConfiguration {
 class ConfigFromXmlRest {
     @Autowired
     @Qualifier("russianGreeterXml")
-    lateinit var russianGreeterXmlService: RussianGreeter
+    lateinit var russianGreeterXmlService: Greeter
+
+    @Autowired
+    @Qualifier("germanyGreeterXml")
+    lateinit var germanyGreeterXmlService: Greeter
+
+    @Autowired
+    @Qualifier("englishGreeterXml")
+    lateinit var englishGreeterXmlService: Greeter
 ....
 ````
 

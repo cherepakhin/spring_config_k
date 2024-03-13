@@ -5,9 +5,7 @@ import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
-import ru.perm.v.springconfig_k.greeters.EnglishGreeter
-import ru.perm.v.springconfig_k.greeters.GermanyGreeter
-import ru.perm.v.springconfig_k.greeters.RussianGreeter
+import ru.perm.v.springconfig_k.greeters.Greeter
 import ru.perm.v.springconfig_k.service.GreeterService
 
 @RestController
@@ -15,15 +13,15 @@ import ru.perm.v.springconfig_k.service.GreeterService
 class ConfigFromXmlRest {
     @Autowired
     @Qualifier("russianGreeterXml")
-    lateinit var russianGreeterXmlService: RussianGreeter
+    lateinit var russianGreeterXmlService: Greeter
 
     @Autowired
     @Qualifier("germanyGreeterXml")
-    lateinit var germanyGreeterXmlService: GermanyGreeter
+    lateinit var germanyGreeterXmlService: Greeter
 
     @Autowired
     @Qualifier("englishGreeterXml")
-    lateinit var englishGreeterXmlService: EnglishGreeter
+    lateinit var englishGreeterXmlService: Greeter
 
     @Autowired
     @Qualifier("selectedGreeterServiceXml")
