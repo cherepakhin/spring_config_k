@@ -4,12 +4,12 @@ plugins {
 	id("org.springframework.boot") version "2.5.6"
 	id("io.spring.dependency-management") version "1.0.11.RELEASE"
 	id("maven-publish")
-	kotlin("jvm") version "1.5.21"
-	kotlin("plugin.spring") version "1.5.21"
+	kotlin("jvm") version "1.9.23"
+	kotlin("plugin.spring") version "1.9.23"
 }
 
 group = "ru.perm.v"
-version = "0.0.3"
+version = "0.0.4"
 java.sourceCompatibility = JavaVersion.VERSION_11
 
 repositories {

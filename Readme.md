@@ -215,3 +215,19 @@ export JAVA_HOME=/usr/lib/jvm/java-1.11.0-openjdk-amd64
 В Idea установить File->Project Structure->Project Settings->Project->SDK
 
 ![sdk](doc/java11.png)
+
+### Ошибки
+
+При компиляции возникает ошибка: "Could not connect to kotlin daemon FileChannelUtil". Исправил в build.gradle.kts версии kotlin("jvm") version "1.9.23", kotlin("plugin.spring") version "1.9.23":
+
+````yaml
+plugins {
+id("org.springframework.boot") version "2.5.6"
+id("io.spring.dependency-management") version "1.0.11.RELEASE"
+id("maven-publish")
+kotlin("jvm") version "1.9.23"
+kotlin("plugin.spring") version "1.9.23"
+}
+
+java.sourceCompatibility = JavaVersion.VERSION_11
+````
