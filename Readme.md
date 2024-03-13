@@ -119,8 +119,19 @@ lateinit var beanOneConfigFromCode: String
 ### 4. Const value bean
 
 Static в Kotlin нет. Поэтому показан следующий вариант:
+__Вместо__
 
-Определение константы:
+````kotlin
+@Configuration
+class BeansFromCodeConfiguration {
+
+    @Bean
+    fun beanOneConfigFromCode() = "BEAN_ONE"
+....
+}
+````
+
+Определение константы __сделано так__ (@get:Bean):
 
 ````kotlin
 @Configuration
@@ -132,7 +143,7 @@ class BeansFromCodeConfiguration {
 }
 ````
 
-Использование в ConfigFromCodeRest:
+Использование в ConfigFromCodeRest (как обычно):
 
 ````kotlin
 @RestController
