@@ -218,7 +218,7 @@ export JAVA_HOME=/usr/lib/jvm/java-1.11.0-openjdk-amd64
 
 ### Ошибки
 
-При компиляции возникает ошибка: "Could not connect to kotlin daemon FileChannelUtil". Исправил в build.gradle.kts версии kotlin("jvm") version "1.9.23", kotlin("plugin.spring") version "1.9.23":
+При компиляции возникает ошибка: "Could not connect to kotlin daemon FileChannelUtil". Исправил в build.gradle.kts версии kotlin("jvm") version "1.9.23", kotlin("plugin.spring") version "1.9.23" (старые версии:	kotlin("jvm") version "1.5.21", kotlin("plugin.spring") version "1.5.21"):
 
 ````yaml
 plugins {
