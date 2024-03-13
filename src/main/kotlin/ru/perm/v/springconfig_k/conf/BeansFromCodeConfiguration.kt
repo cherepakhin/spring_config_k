@@ -9,10 +9,13 @@ class BeansFromCodeConfiguration {
     /**
      * for injection use
      * @Autowired
-     * lateinit var staticBean:String
+     * lateinit var namedBean:String
+     *
+     * the bean name is specified in the annotation.
+     * The function name can be any.
      */
     @Bean("namedBean")
-    fun getMyStaticBean() = "NAMED_BEAN"
+    fun anyFunctionName() = "NAMED_BEAN"
 
     @Bean
     fun beanOneConfigFromCode() = "BEAN_ONE"

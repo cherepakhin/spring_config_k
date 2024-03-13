@@ -68,14 +68,17 @@ class BeansFromCodeConfiguration {
     /**
      * for injection use
      * @Autowired
-     * lateinit var staticBean:String
+     * lateinit var namedBean:String
+     *
+     * The bean name is specified in the annotation.
+     * The function name can be any.
      */
-    @Bean("staticBean")
-    fun getMyStaticBean() = "STATIC_BEAN"
+    @Bean("namedBean")
+    fun anyFunctionName() = "NAMED_BEAN"
 
     @Bean
     fun beanOneConfigFromCode() = "BEAN_ONE"
-
+}
 ````
 
 Использование:
@@ -93,9 +96,14 @@ lateinit var beanOneConfigFromCode: String
     @Qualifier("beanTwoConfigFromCode")
     lateinit var myVarBeanTwoConfigFromCode: String
 
+    // bean with name "namedBean" defined in conf/BeansFromCodeConfiguration.kt class.
+    // Linked by NAME var. @Qualifier("namedBean") not needed.
+    @Autowired
+    lateinit var namedBean: String
+    
 ````
 
-При использовании аннотаций для точного указания имени Spring bean использовано @Bean("__staticBean__"). В классах, которые будут использовать bean можно использовать __@Autowired staticBean__ (см. [rest/ConfigFromCodeRest.kt](https://github.com/cherepakhin/spring_config_k/blob/master/src/main/kotlin/ru/perm/v/springconfig_k/rest/ConfigFromCodeRest.kt)). 
+При использовании аннотаций для точного указания имени Spring bean использовано @Bean("__namedBean__"). В классах, которые будут использовать bean можно использовать __@Autowired namedBean__ (см. [rest/ConfigFromCodeRest.kt](https://github.com/cherepakhin/spring_config_k/blob/master/src/main/kotlin/ru/perm/v/springconfig_k/rest/ConfigFromCodeRest.kt)). 
 
 <a id="tests"></a>
 ### 3. Тесты
